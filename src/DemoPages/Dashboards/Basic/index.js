@@ -44,7 +44,7 @@ import avatar4 from '../../../assets/utils/images/avatars/4.jpg';
 
 
  
-
+let resultado = [];
 /**************************************************************************************************************/
 const axios = require('axios').default;
 
@@ -67,14 +67,6 @@ export default class AnalyticsDashboard1 extends Component {
     constructor() {
         super();
 
-        this.state = {
-            
-            
-
-        };
-        
-        
-
         instanceLogin.post('doLogin', {
             "username": "josecarlos.sanguino",
             "password": "Sanguino@2021"
@@ -96,9 +88,10 @@ export default class AnalyticsDashboard1 extends Component {
               .then(function (response) {
                   
                 
-                let  resultado = response.data.item; 
+                  resultado = response.data.item.items; 
+                 
                 //console.log(response.data.item.items);
-                //console.log(resultado);
+                console.log(response);
               })
               .catch(function (error) {
                 console.log(error);
@@ -150,10 +143,9 @@ export default class AnalyticsDashboard1 extends Component {
                                             </tr>
                                             </thead>
                                             <tbody>
-                                                {this.resultado}
-                                            {resultado.map((lista) =>{     
+                                                
                                             <tr>
-                                                <td className="text-center text-muted">{lista}</td>
+                                                <td className="text-center text-muted">Prueba</td>
                                                 <td>
                                                     <div className="widget-content p-0">
                                                         <div className="widget-content-wrapper">
@@ -178,9 +170,9 @@ export default class AnalyticsDashboard1 extends Component {
                                                 </td>
                                                 <td></td>
                                             </tr>
-                                            } ) }              
+                                                       
                                             </tbody>
-                            
+                            }
                                         </table>
                                     </div>
                                     
